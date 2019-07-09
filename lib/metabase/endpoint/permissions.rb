@@ -29,6 +29,15 @@ module Metabase
       def add_user_to_group(**params)
         post('/api/permissions/membership', params)
       end
+
+      # Fetch a permissions groups.
+      #
+      # @param params [Hash] Query string
+      # @return [Hash] Parsed response JSON
+      # @see https://github.com/metabase/metabase/blob/master/docs/api-documentation.md#get-apipermissionsgroupid
+      def group(group_id:, **params)
+        post("/api/permissions/group/#{group_id}", params)
+      end
     end
   end
 end
