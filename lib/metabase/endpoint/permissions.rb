@@ -36,7 +36,7 @@ module Metabase
       # @return [Hash] Parsed response JSON
       # @see https://github.com/metabase/metabase/blob/master/docs/api-documentation.md#get-apipermissionsgroupid
       def group(group_id:, **params)
-        post("/api/permissions/group/#{group_id}", params)
+        get("/api/permissions/group/#{group_id}", params)
       end
     end
   end
