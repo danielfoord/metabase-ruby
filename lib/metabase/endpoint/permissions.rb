@@ -11,6 +11,24 @@ module Metabase
       def groups(**params)
         get('/api/permissions/group', params)
       end
+
+      # Create a permission group.
+      #
+      # @param params [Hash] Query string
+      # @return [Hash] Parsed response JSON
+      # @see https://github.com/metabase/metabase/blob/master/docs/api-documentation.md#post-apipermissionsgroup
+      def create_group(**params)
+        post('/api/permissions/group', params)
+      end
+
+      # Add a user to a permission group.
+      #
+      # @param params [Hash] Query string
+      # @return [<Array>Hash] Parsed response JSON
+      # @see https://github.com/metabase/metabase/blob/master/docs/api-documentation.md#post-apipermissionsmembership
+      def add_user_to_group(**params)
+        post('/api/permissions/membership', params)
+      end
     end
   end
 end

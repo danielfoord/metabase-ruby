@@ -20,6 +20,15 @@ module Metabase
       def current_user(**params)
         get('/api/user/current', params)
       end
+
+      # Create a user
+      #
+      # @param params [Hash] Query string
+      # @return [Hash] Parsed response JSON
+      # @see https://github.com/metabase/metabase/blob/master/docs/api-documentation.md#post-apiuser
+      def create_user(**params)
+        post('/api/user/', params)
+      end
     end
   end
 end
